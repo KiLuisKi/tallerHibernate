@@ -26,6 +26,7 @@ import javax.persistence.TemporalType;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.samples.petclinic.model.BaseEntity;
+import org.springframework.samples.petclinic.owner.Bill;
 
 
 
@@ -46,6 +47,16 @@ public class Visit extends BaseEntity {
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "yyyy/MM/dd")
     private Date date;
+    private Bill bill;
+
+
+    public Bill getBill() {
+	return bill;
+    }
+
+    public void setBill(Bill bill) {
+ 	this.bill = bill;
+    }
 
     /**
      * Holds value of property description.
